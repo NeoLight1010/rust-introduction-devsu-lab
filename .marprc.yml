@@ -1,0 +1,7 @@
+inputDir: .
+output: dist/
+
+html: true
+
+watch: true
+preview: true
