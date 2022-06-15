@@ -7,7 +7,7 @@ keywords: rust, introduction
 theme: gaia
 paginate: true
 backgroundColor: #ffff
-backgroundImage: url("background.jpg")
+backgroundImage: url("../background.jpg")
 
 class: lead
 ---
@@ -22,4 +22,73 @@ by Anthony Suárez
 
 ---
 
-Hello World
+#### Truths and myths about Rust
+
+---
+
+#### Truths and myths about Rust
+
+- Rust is memory-safe.
+
+---
+
+#### Truths and myths about Rust
+
+- Rust is memory-safe.
+- Rust is fast.
+
+---
+
+#### Truths and myths about Rust
+
+- Rust is memory-safe.
+- Rust is fast.
+- Rust is going to replace C/C++.
+
+---
+
+#### Truths and myths about Rust
+
+- Rust is memory-safe.
+- Rust is fast.
+- Rust is going to replace C/C++.
+- The Linux kernel is going to be re-written in Rust.
+
+---
+
+#### Truths and myths about Rust
+
+- Rust is memory-safe. ![width:1em](https://www.nicepng.com/png/detail/5-52248_check-mark-clear-background-green-check-mark.png)
+- Rust is fast. ![width:1em](https://www.nicepng.com/png/detail/5-52248_check-mark-clear-background-green-check-mark.png)
+- Rust is going to replace C/C++. ![width:1em](https://cdn.pixabay.com/photo/2012/04/12/13/15/red-29985_960_720.png)
+- The Linux kernel is going to be re-written in Rust. ![width:1em](https://cdn.pixabay.com/photo/2012/04/12/13/15/red-29985_960_720.png)
+
+---
+
+## What is true about Rust
+
+---
+
+### Rust is fast
+
+Rust is a compiled language **without a garbage collector**, achieving
+performance like low-level languages.
+
+---
+
+### Rust is fast
+
+Rust is a compiled language **without a garbage collector**, achieving
+performance like low-level languages.
+
+- Faster than Python
+- Faster than Java
+
+- Comparable to C/C++
+
+---
+
+### Rust is memory-safe
+
+
+
