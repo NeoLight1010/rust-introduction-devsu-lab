@@ -42,7 +42,7 @@ Rust has remained the most loved programming language since 2016.
 
 ![width:600px](https://cdn.thenewstack.io/media/2021/05/a34922e6-rust-02-1024x724.png)
 
-<!--footer: StackOverflow Survey 2016, 2017, 2018, 2019, 2020, 2021 -->
+<!--_footer: StackOverflow Survey 2016, 2017, 2018, 2019, 2020, 2021 -->
 
 ---
 
@@ -51,7 +51,7 @@ Rust is associated with high paying jobs.
 <!-- Rust jobs usually have high-paying salaries averaging at around $77,530 
 per year, according to the 2021 StackOverflow Survey.-->
 
-<!--footer: StackOverflow Surveys -->
+<!-- _footer: StackOverflow Surveys -->
 
 ---
 
@@ -60,15 +60,23 @@ number of Rust developers has **tripled**!
 
 <!-- Rust is mostly popular in AR/VR and IoT. Now bigger than Ruby. -->
 
-<!--footer: State of the Developer Nation 2022 -->
+<!-- _footer: State of the Developer Nation 2022 -->
 
 ---
 
-Rust is the #1 language of choice for WebAssembly
+Rust is the #1 language of use and choice for WebAssembly. 
 
 ![width:600px](https://blog.scottlogic.com/ceberhardt/assets/state-of-wasm/current-language.png)
 
-<!--footer: State of WASM 2021: https://blog.scottlogic.com/2021/06/21/state-of-wasm.html -->
+<!--_footer: State of WASM 2021: https://blog.scottlogic.com/2021/06/21/state-of-wasm.html -->
+
+---
+
+Rust is a leader in the blockchain world.
+
+Build smart contracts with frameworks like Solana.
+
+![width:300px](https://s2.coinmarketcap.com/static/img/coins/200x200/5426.png)
 
 ---
 
