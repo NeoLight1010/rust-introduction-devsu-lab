@@ -40,13 +40,15 @@ Rust's mascot is a crab called *Ferris* 🦀.
 
 Rust has remained the most loved programming language since 2016.
 
-![width:600px](https://cdn.thenewstack.io/media/2021/05/a34922e6-rust-02-1024x724.png)
+![width:600px](https://rustacean.net/more-crabby-things/ferris-love.jpg)
 
 <!--_footer: StackOverflow Survey 2016, 2017, 2018, 2019, 2020, 2021 -->
 
 ---
 
 Rust is associated with high paying jobs.
+
+![width:600px](https://i.imgur.com/Npho9BV.png)
 
 <!-- Rust jobs usually have high-paying salaries averaging at around $77,530 
 per year, according to the 2021 StackOverflow Survey.-->
@@ -55,18 +57,23 @@ per year, according to the 2021 StackOverflow Survey.-->
 
 ---
 
-Rust's has the fastest growing language community! Since 2020, until 2022, the
+Rust's has the fastest growing language community! From 2020 to 2022, the
 number of Rust developers has **tripled**!
 
+![width:600px](https://blog.knoldus.com/wp-content/uploads/2020/09/Rust-1024x381-1.jpg)
+
 <!-- Rust is mostly popular in AR/VR and IoT. Now bigger than Ruby. -->
+<!-- Rust's community had nearly 2.2M developers at the time of the survey. -->
 
 <!-- _footer: State of the Developer Nation 2022 -->
 
 ---
 
-Rust is the #1 language of use and choice for WebAssembly. 
+Rust is the #1 language for WebAssembly development. 
 
-![width:600px](https://blog.scottlogic.com/ceberhardt/assets/state-of-wasm/current-language.png)
+![width:600px](https://www.rust-lang.org/static/images/wasm-ferris.png)
+
+<!-- Most WASM developers either use Rust, or they want to use it. -->
 
 <!--_footer: State of WASM 2021: https://blog.scottlogic.com/2021/06/21/state-of-wasm.html -->
 
