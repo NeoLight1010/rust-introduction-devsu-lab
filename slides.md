@@ -12,7 +12,7 @@ backgroundImage: url("../background.jpg")
 class: lead
 ---
 
-# Rust Introduction 🦀
+# Getting on the Rust train! 🦀🚂
 
 by Anthony Suárez
 
@@ -25,8 +25,6 @@ by Anthony Suárez
 Rust is a systems-programming language created by Mozilla in 2010.
 
 Rust is taking over the programming world for its revolutionary features.
-
-Rust's mascot is a crab called *Ferris* 🦀.
 
 ![width:200px](https://rustacean.net/assets/cuddlyferris.png)
 
@@ -87,73 +85,25 @@ Build smart contracts with frameworks like Solana.
 
 ---
 
-#### Truths and myths about Rust
+## Quick introduction to Rust
+
+<!-- What makes Rust so attractive? -->
 
 ---
 
-#### Truths and myths about Rust
+- Why Rust was created.
+- How it accomplishes its goals.
+    - Borrow checker.
+- Fearless concurrency.
 
-- Rust is memory-safe.
+- Functional features.
+- Idiomatic syntax.
 
----
-
-#### Truths and myths about Rust
-
-- Rust is memory-safe.
-- Rust is fast.
-
----
-
-#### Truths and myths about Rust
-
-- Rust is memory-safe.
-- Rust is fast.
-- Rust is going to replace C/C++.
-
----
-
-#### Truths and myths about Rust
-
-- Rust is memory-safe.
-- Rust is fast.
-- Rust is going to replace C/C++.
-- The Linux kernel is going to be re-written in Rust.
-
----
-
-#### Truths and myths about Rust
-
-- Rust is memory-safe. ![width:1em](https://www.nicepng.com/png/detail/5-52248_check-mark-clear-background-green-check-mark.png)
-- Rust is fast. ![width:1em](https://www.nicepng.com/png/detail/5-52248_check-mark-clear-background-green-check-mark.png)
-- Rust is going to replace C/C++. ![width:1em](https://cdn.pixabay.com/photo/2012/04/12/13/15/red-29985_960_720.png)
-- The Linux kernel is going to be re-written in Rust. ![width:1em](https://cdn.pixabay.com/photo/2012/04/12/13/15/red-29985_960_720.png)
-
----
-
-## What is true about Rust
-
----
-
-### Rust is fast
-
-Rust is a compiled language **without a garbage collector**, achieving
-performance like low-level languages.
-
----
-
-### Rust is fast
-
-Rust is a compiled language **without a garbage collector**, achieving
-performance like low-level languages.
-
-- Faster than Python
-- Faster than Java
-
-- Comparable to C/C++
-
----
-
-### Rust is memory-safe
-
-
-
+- Modern tooling.
+    - Cargo.
+        - Build tool.
+        - Package manager.
+        - Plugins.
+        - Test runner.
+    - Rustfmt.
+    - Rust analyzer.
