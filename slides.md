@@ -91,19 +91,104 @@ Build smart contracts with frameworks like Solana.
 
 ---
 
-- Why Rust was created.
-- How it accomplishes its goals.
-    - Borrow checker.
-- Fearless concurrency.
+#### Goals
 
-- Functional features.
-- Idiomatic syntax.
+- Speed.
+    - Compiled language.
+    - No garbage collection.
+- Safety.
+     - No `null`s.
+     - No dangling pointers.
+     - No *unsafe*.
+- Concurrency.
+    - No race conditions.
+    - No deadlocks.
+    - *Fearless concurrency*.
 
-- Modern tooling.
-    - Cargo.
-        - Build tool.
-        - Package manager.
-        - Plugins.
-        - Test runner.
-    - Rustfmt.
-    - Rust analyzer.
+---
+
+### Meet the *borrow-checker*
+
+- Each variable has an *owner*.
+- You can reference another variable's value via a *reference*.
+- You may either have any number of *immutable* references, or only one
+  *mutable* reference at the same time.
+
+---
+
+[Example here]
+
+---
+
+### Memory safety 
+
+Say *Goodbye!* to memory issues. Never more:
+
+- Segfaults.
+- `cannot access member 'x' of undefined`.
+- Invalid pointers.
+
+---
+
+### Fearless concurrency
+
+The borrow-checker rules make common concurrency issues *impossible*.
+
+**Concurrency has never been easier!**
+
+---
+
+### Idiomatic syntax
+
+Familiar, easy-to-understand syntax.
+
+---
+
+### Modern language features
+
+- Pattern matching.
+- Enum variants.
+- Closures (anonymous functions).
+- Async/await (even before than JS!).
+
+---
+
+### Rich type system
+
+- Type aliases.
+- Type inference.
+- Structs (with methods).
+- Traits (similar to Haskell *typeclasses*).
+- Generics.
+
+- Helpful error messages and tips.
+
+---
+
+### Modern tooling
+
+#### Cargo
+
+- Build tool
+- Package manager.
+- Test runner.
+
+- Extensible with *plugins*.
+
+---
+
+#### Rustfmt
+
+Awesome formatting.
+
+#### Rust Analyzer
+
+Great IDE and editor support.
+
+---
+
+#### Rustup
+
+Get all your toolchain from a single place!
+
+---
