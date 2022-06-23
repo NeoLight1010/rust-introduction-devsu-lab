@@ -12,6 +12,16 @@ backgroundImage: url("../background.jpg")
 class: lead
 ---
 
+<!--
+Description
+
+Rust is one of the highest trending technologies in modern software development due to its amazing features that solves one of software's most common and old issues: memory management.. In this talk, the basics of Rust and its environment are covered, so you can start writing safe, reliable software right away!
+
+About the speaker
+
+Anthony Suárez is a passionate self-taught backend developer and open-source advocate. Works mainly with technologies like Python, Typescript and AWS. In his free time, he likes learning new skills like C, Rust, Haskell, and others.
+-->
+
 # Getting on the Rust train! 🦀🚂
 
 by Anthony Suárez
@@ -192,3 +202,6 @@ Great IDE and editor support.
 Get all your toolchain from a single place!
 
 ---
+
+- Doc generator.
+- The Book.
