@@ -32,6 +32,8 @@ by Anthony Suárez
 
 ---
 
+<!-- backgroundImage: url("../background-normal.jpg") -->
+
 Rust is a systems-programming language created by Mozilla in 2010.
 
 Rust is taking over the programming world for its revolutionary features.
@@ -50,7 +52,7 @@ Rust has remained the most loved programming language since 2016.
 
 ![width:600px](https://rustacean.net/more-crabby-things/ferris-love.jpg)
 
-<!--_footer: StackOverflow Survey 2016, 2017, 2018, 2019, 2020, 2021 -->
+<!--_footer: StackOverflow Survey 2016, 2017, 2018, 2019, 2020, 2021, 2022 -->
 
 ---
 
@@ -65,7 +67,7 @@ per year, according to the 2021 StackOverflow Survey.-->
 
 ---
 
-Rust's has the fastest growing language community! From 2020 to 2022, the
+Rust has the fastest growing language community! From 2020 to 2022, the
 number of Rust developers has **tripled**!
 
 ![width:600px](https://blog.knoldus.com/wp-content/uploads/2020/09/Rust-1024x381-1.jpg)
@@ -95,7 +97,23 @@ Build smart contracts with frameworks like Solana.
 
 ---
 
+Rust is the second language of the Linux kernel.
+
+
+![width:600px](https://www.muylinux.com/wp-content/uploads/2021/03/RustLinux-1024x576.png)
+
+<!--
+Rust interfaces and utils (replacing GNU utils) might me merged for v5.20.
+Possibly 2023.
+-->
+
+<!-- _footer: https://www.phoronix.com/scan.php?page=news_item&px=Rust-For-Linux-5.20-Possible -->
+
+---
+
 ## Quick introduction to Rust
+
+What makes Rust great?
 
 <!-- What makes Rust so attractive? -->
 
@@ -104,16 +122,28 @@ Build smart contracts with frameworks like Solana.
 #### Goals
 
 - Speed.
+- Safety.
+- Concurrency.
+
+![width:500px](https://free4kwallpapers.com/uploads/originals/2020/04/27/fast-car-wallpaper.jpg)
+
+<!--
     - Compiled language.
     - No garbage collection.
-- Safety.
+
+-->
+
+<!--
      - No `null`s.
      - No dangling pointers.
      - No *unsafe*.
-- Concurrency.
+-->
+
+<!--
     - No race conditions.
     - No deadlocks.
     - *Fearless concurrency*.
+-->
 
 ---
 
@@ -123,10 +153,6 @@ Build smart contracts with frameworks like Solana.
 - You can reference another variable's value via a *reference*.
 - You may either have any number of *immutable* references, or only one
   *mutable* reference at the same time.
-
----
-
-[Example here]
 
 ---
 
@@ -146,11 +172,15 @@ The borrow-checker rules make common concurrency issues *impossible*.
 
 **Concurrency has never been easier!**
 
+![width:500px](https://media.istockphoto.com/illustrations/facing-the-giant-spider-robot-illustration-id1036972108?k=20&m=1036972108&s=612x612&w=0&h=TyH-jiqqjrE_oT_YxIru0J1ZEAt9TSXWLKhXMmNwKdQ=)
+
 ---
 
 ### Idiomatic syntax
 
 Familiar, easy-to-understand syntax.
+
+![width:600px](../hello_world.png)
 
 ---
 
@@ -182,6 +212,7 @@ Familiar, easy-to-understand syntax.
 - Build tool
 - Package manager.
 - Test runner.
+- Docs generator.
 
 - Extensible with *plugins*.
 
@@ -195,13 +226,40 @@ Awesome formatting.
 
 Great IDE and editor support.
 
----
-
 #### Rustup
 
 Get all your toolchain from a single place!
 
 ---
 
-- Doc generator.
-- The Book.
+### Great learning material and community
+
+- Official book: *The Rust Programming Language*
+- Generated crate docs.
+- Growing community of *Rusteaceans*.
+
+---
+
+# Hands on!
+
+Let's build our first application with Rust.
+
+---
+
+## What we're building
+
+A terminal hangman game.
+
+![width:400px](https://media.istockphoto.com/illustrations/simple-illustration-of-hangman-game-illustration-id1196954772?k=20&m=1196954772&s=612x612&w=0&h=nzsr9bCwxp9xW3dp-nBJeXE7TVGqnWtdJpbaXvEyl3E=)
+
+---
+
+## What we'll learn
+
+- Setting up a project.
+- Rust's basic syntax.
+- Basic error handling.
+- Enums, pattern matching, closures.
+- Using external *crates*.
+- Rust's module system.
+- Basic unit testing.
