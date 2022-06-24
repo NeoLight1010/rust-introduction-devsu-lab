@@ -36,7 +36,9 @@ by Anthony Suárez
 
 Rust is a systems-programming language created by Mozilla in 2010.
 
-Rust is taking over the programming world for its revolutionary features.
+Having low-level capabilites, it is an alternative to languages like C and C++.
+
+*But why should you care about Rust?*
 
 ![width:200px](https://rustacean.net/assets/cuddlyferris.png)
 
@@ -111,6 +113,22 @@ Possibly 2023.
 
 ---
 
+### Companies using Rust
+
+- ![height:1em](https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dropbox_Icon.svg/1101px-Dropbox_Icon.svg.png): *"Rust has been a force multiplier for our team..."*
+- ![height:1em](https://cdn.iconscout.com/icon/free/png-256/coursera-3628707-3029932.png): Rust is *"an excellent choice for security critical functions."*
+- ![height:1em](https://cdn-icons-png.flaticon.com/512/5968/5968705.png): Rust *"combines best-in-class speed with low resource usage."*
+- Cloudflare, Facebook, Discord, Amazon, Microsoft, Mozilla,
+  Coursera, NPM, Twitter.
+
+<!-- 
+Microsoft is a co-founder of The Rust Foundation.
+-->
+
+<!-- _footer: https://serokell.io/blog/rust-companies -->
+
+---
+
 ## Quick introduction to Rust
 
 What makes Rust great?
@@ -124,8 +142,9 @@ What makes Rust great?
 - Speed.
 - Safety.
 - Concurrency.
+- Practicality.
 
-![width:500px](https://free4kwallpapers.com/uploads/originals/2020/04/27/fast-car-wallpaper.jpg)
+![width:300px](https://free4kwallpapers.com/uploads/originals/2020/04/27/fast-car-wallpaper.jpg)
 
 <!--
     - Compiled language.
@@ -180,7 +199,13 @@ The borrow-checker rules make common concurrency issues *impossible*.
 
 Familiar, easy-to-understand syntax.
 
-![width:600px](../hello_world.png)
+*Low-level power with high-level syntax.*
+
+![width:400px](../hello_world.png)
+
+---
+
+![width:800px](../hello_world.png)
 
 ---
 
@@ -188,8 +213,9 @@ Familiar, easy-to-understand syntax.
 
 - Pattern matching.
 - Enum variants.
-- Closures (anonymous functions).
-- Async/await (even before than JS!).
+- Closures.
+- Async/await.
+- Macros!
 
 ---
 
@@ -198,16 +224,16 @@ Familiar, easy-to-understand syntax.
 - Type aliases.
 - Type inference.
 - Structs (with methods).
-- Traits (similar to Haskell *typeclasses*).
-- Generics.
-
+- Enum variants.
+- Traits (similar to Haskell *typeclasses* and OOP interfaces).
+- Generics (types, traits, lifetimes).
 - Helpful error messages and tips.
 
 ---
 
 ### Modern tooling
 
-#### Cargo
+#### Cargo ![height:1em](https://user-images.githubusercontent.com/41265192/44623012-be9fcc00-a8c4-11e8-9943-646e3c682292.png)
 
 - Build tool
 - Package manager.
@@ -218,11 +244,15 @@ Familiar, easy-to-understand syntax.
 
 ---
 
+#### Crates.io ![height:1em](https://crates.io/assets/Cargo-Logo-Small.png)
+
+Rust's crate registry.
+
 #### Rustfmt
 
 Awesome formatting.
 
-#### Rust Analyzer
+#### Rust Analyzer ![height:1em](https://pbs.twimg.com/profile_images/1217461647377420289/HXHa6hZU_400x400.jpg)
 
 Great IDE and editor support.
 
@@ -237,6 +267,14 @@ Get all your toolchain from a single place!
 - Official book: *The Rust Programming Language*
 - Generated crate docs.
 - Growing community of *Rusteaceans*.
+
+![width:200px](https://images-na.ssl-images-amazon.com/images/I/51fHAF3OAyL._SX376_BO1,204,203,200_.jpg)
+
+---
+
+# Enough talk!
+
+![width:500px](https://i.imgur.com/rXucfA4h.jpg)
 
 ---
 
@@ -259,7 +297,43 @@ A terminal hangman game.
 - Setting up a project.
 - Rust's basic syntax.
 - Basic error handling.
-- Enums, pattern matching, closures.
+- Enums, pattern matching, traits, closures...
 - Using external *crates*.
 - Rust's module system.
 - Basic unit testing.
+
+---
+
+# Our project is finished!
+
+Now what?
+
+---
+
+# Some great material
+
+- *The Rust Programming Language* book.
+- [*Let's Get Rusty*](https://www.youtube.com/c/LetsGetRusty) Youtube channel.
+- [*Type-Driven API Design in Rust*](https://www.youtube.com/watch?v=bnnacleqg6k&list=PL-N92y40KxKn2wTKEB7-iJRU_IjdB7N_M&index=29&t=1964s) by Will Crichton.
+- [*Whoops! I Rewrote it in Rust*](https://youtu.be/XdMgH3eV6BA) by Brian Martin.
+
+![width:150px](https://rustacean.net/more-crabby-things/rustdocs.png)
+
+---
+
+# Challenges!
+
+Some projects you can make:
+
+- Snake game using *Piston*..
+- Build a REST API using *Rocket* (web framework) and *Diesel* (ORM).
+- Create a WASM web app with *Yew* (*React developers might be interested*)
+- Make a cool CLI app with *tui-rs*.
+
+The possibilites are endless!
+
+---
+
+# Thank you!
+
+![width:600px](https://rustacean.net/assets/rustacean-flat-happy.png)
