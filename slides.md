@@ -177,11 +177,12 @@ What makes Rust great?
 
 ### Memory safety 
 
-Say *Goodbye!* to memory issues. Never more:
+Say *Goodbye!* to memory issues and other common runtime exceptions. Never more:
 
 - Segfaults.
 - `cannot access member 'x' of undefined`.
 - Invalid pointers.
+- Uncaught exceptions.
 
 ---
 
