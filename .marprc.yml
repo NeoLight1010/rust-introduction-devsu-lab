@@ -1,5 +1,5 @@
 inputDir: .
-output: dist/
+output: .
 
 html: true
 

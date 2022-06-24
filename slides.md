@@ -7,7 +7,7 @@ keywords: rust, introduction
 theme: gaia
 paginate: true
 backgroundColor: #ffff
-backgroundImage: url("../background.jpg")
+backgroundImage: url("./background.jpg")
 
 class: lead
 ---
@@ -32,7 +32,7 @@ by Anthony Suárez
 
 ---
 
-<!-- backgroundImage: url("../background-normal.jpg") -->
+<!-- backgroundImage: url("./background-normal.jpg") -->
 
 Rust is a systems-programming language created by Mozilla in 2010.
 
@@ -144,7 +144,7 @@ What makes Rust great?
 - Concurrency.
 - Practicality.
 
-![width:300px](https://free4kwallpapers.com/uploads/originals/2020/04/27/fast-car-wallpaper.jpg)
+![bg right 70%](https://free4kwallpapers.com/uploads/originals/2020/04/27/fast-car-wallpaper.jpg)
 
 <!--
     - Compiled language.
@@ -201,11 +201,11 @@ Familiar, easy-to-understand syntax.
 
 *Low-level power with high-level syntax.*
 
-![width:400px](../hello_world.png)
+![width:400px](./hello_world.png)
 
 ---
 
-![width:800px](../hello_world.png)
+![width:800px](./hello_world.png)
 
 ---
 
@@ -325,7 +325,7 @@ Now what?
 
 Some projects you can make:
 
-- Snake game using *Piston*..
+- Snake game using *Piston*.
 - Build a REST API using *Rocket* (web framework) and *Diesel* (ORM).
 - Create a WASM web app with *Yew* (*React developers might be interested*)
 - Make a cool CLI app with *tui-rs*.
