@@ -240,3 +240,112 @@ Rust's type system is really cool, allowing things like:
 
 In addition, the Rust type system allows the compiler to generate helpful
 error messages that guide you when your code doesn't compile.
+
+## 20. Modern tooling - Cargo
+
+Rust has many modern tools at its disposal. For example, we got Cargo, which is
+Rust's package manager, build tool, test runner and documentation generator.
+
+Cargo is even extensible via plugins that you can install using Cargo itself.
+
+## 21. Other tools
+
+Other available tools are:
+
+- Crates.io, which is Rust's package registry.
+- Rustfmt, which is Rust's official formatter, ensuring for consistent style
+  accross your codebase.
+- Rust analyzer, which provides great IDE and editor support.
+- And Rustup, which is the official installer of the Rust toolchain, allowing
+  you to install all of these tools from a single place.
+
+## 22. Learning material and community
+
+Finally, Rust also has a big community and material for learning.
+
+For example, you can learn Rust by reading the official Rust Book, or by following
+the Rust by Example website. You can also read any library's documentation
+from its automatically generated docs. Or you can ask for help from anyone in
+the big community of Rustaceans around the world.
+
+## 23. Enough talk!
+
+But enough talk! The moment that we've all been waiting for has come.
+
+## 24. Hands On!
+
+It's time to write our first project in Rust!
+
+## 25. What we're building
+
+We will be writing a simple terminal hangman game. If you want to see the
+finished project, you can go to the GitHub repo in
+github.com/NeoLight1010/hangman-rs.
+
+## 26. What we'll learn
+
+This simple projets will expose us to multiple Rust concepts, so we will learn
+things like:
+
+- Setting up a project.
+- Rust's basic syntax.
+- Basic error handling.
+- Enums, patter matching, traits, closures...
+- Using external crates.
+- Rust's module system.
+- Basic unit testings.
+- And more.
+
+So, let's get started!
+
+## [ Build project ]
+
+## 27. Finished project
+
+So, we've finished our project. Now what?
+
+Well, if you're interested in learning more about Rust, I can recommend some
+material that you can use.
+
+## 28. Some great material
+
+First, The Rust Programming Language book is a great place to start to learn
+Rust, from its basic usage, to the more advanced topics.
+
+Second, I recommend the *Let's Get Rusty* Youtube channel, which is a channel
+all dedicated to Rust where you will find guides for diverse topics about the
+language.
+
+I also recommend the talk *Type-Driven API Design in Rust*; an amazing talk
+that showcases how Rust's trait system can be a powerful tool for designing
+good APIs in Rust.
+
+Another talk that I highly recommend is *Whoops! I Rewrote it in Rust* by
+Brian Martin, in which Martin showcases how Rust was used at Twitter for
+rewriting an open source memory-caching tool, achieving even better results
+than with the pure C implementation.
+
+## 29. Challenges
+
+Finally, if you like learning by doing, I can recommend some challenges
+that will help you get hands-on experience working with Rust.
+
+You can create a simple Snake game using the Piston game engine; or, you can
+build a REST API using the Rocket web framework and the Diesel ORM; or, if you
+are a React developer, you might be interested in creating a WebAssembly web
+app using Yew; or you can create a cool CLI application using a crate like
+Cursive or tui-rs.
+
+The possibilities with Rust are endless! Because, although Rust's initial scope was
+systems programming, its amazing features has allowed it to be an excellent
+language for many other areas.
+
+With that, I have nothing else to say but...
+
+## 30. Thank you
+
+... thank you for attending this talk. I hope you have learned something new
+and I hope you now feel ready to jump into Rust and start creating
+amazing, fast, safe and reliable software. Thank you!
+
+So, if there are any questions, I'll be happy to answer them.
