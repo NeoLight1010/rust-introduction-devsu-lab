@@ -298,7 +298,154 @@ things like:
 
 So, let's get started!
 
-## [ Build project ]
+## [Project building]
+
+To get started, we need to install the Rust toolchain using Rustup, so let's
+go to Google and type Rustup...
+
+[go to Google and type Rustup]
+
+And there it is. There, we can follow the instructions depending on the opertating
+system that we're using. In my case, I'm using Linux so I can run that command.
+If you use Windows, you can download the installer and execute it.
+
+[Run the command]
+
+I recommend you follow the basic instructions for installing the stable release of
+Rust. In my case, I already have Rust installed, so I wil cancel the installation.
+
+After this, we can verify the installation by running `rustup --version` and `rustc --version`.
+
+[Run commands]
+
+Okay, perfect. Let's now make a directory for our project. You
+can create the directory anywhere. In my case, I have a folder
+specific for this lab, so I'll go in there and create the
+directory.
+
+[Create directory]
+
+Inside this directory, we can create a new Rust file named `main.rs` in order
+to create a simple Hello World.
+
+> `touch main.rs`
+> `nvim main.rs`
+
+In my case, I will be using the NeoVim text editor, but you can use any editor
+of your preference. Let's create a Hello World program like we saw before.
+
+[Write hello world]
+
+Perfect! Let's now compile our program using the Rust compiler.
+
+> `rustc main.rs`
+> k
+
+If we list the contents of the directory, we can see an executable has been
+generated. Let's run this executable.
+
+> `./main`
+
+As you can see, it prints Hello World to the console as expected. But let's stop here. Remember I told you Rust has modern tooling? This way of manually compiling everything will get really hard to manage when our project grows bigger, so let's use Cargo instead. First, let's delete everything in the directory.
+
+> `rm main main.rs`
+
+Now, we can run the `cargo init` command.
+
+> `cargo init`
+> `k`
+
+If we list the contents of the directory, we can see this command generated a `Cargo.toml` file and a `src` folder. Let's see what's inside `Cargo.toml`.
+
+[See Cargo.toml]
+
+As you can see, it contains general information about our package, and also has
+a `dependencies` section for listing external crates we might want to use. This
+is really similar to a `package.json` file if you use Node.
+
+Let's now see what's inside src.
+
+[See src]
+
+As you can see, it contains a single `main.rs` file. Let's look at this file.
+
+[See main.rs]
+
+Inside the file, we can see it contains a simple Hello World program, similar
+to what we did before.
+
+Now, let's run our program using Cargo, using the `cargo run` command.
+
+> `cargo run`
+
+The output tells us what happened here. First, the program was
+compiled, and then it was run, all in a single step. If
+instead we wished to just compile without running, we could've
+used the `cargo build` command instead. Or, if we wanted to
+just check the validity without generating any executables, we
+could've run the `cargo check` command.
+
+Okay, so let's start writing our game. We will start from the basics, by creating
+the logic of our game first, and then translating that to the screen.
+
+First, we need a single entity that will hold the state of our game. For this,
+we can use a struct. Let's create a Hangman struct.
+
+[Create empty Hangman struct]
+
+This struct will hold data about our game. A good place to start is the word that
+the player has to guess, so let's add that to the struct.
+
+[Add `word` String field]
+
+Now, we also need a way to know what letters the player needs to guess. For this,
+we can use a HashSet from Rust's standard library. Later, we will create a
+constructor that will initialize this set with the letters from the word.
+
+[Add `letters_to_guess` HashSet]
+
+As you can see, using Rust Analyzer's autoimporting tool, I have imported the HashSet struct from
+std::collections. This syntax brings HashSet to the module's namespace. If we hadn't done so, we would've needed to use the full name std::collections::Hashset for our field.
+
+Perfect. The last thing we'll need is a way to know how many lives the player has, so let's create that.
+
+[Add `lives` u8 field]
+
+The type that we used here is u8, which means an 8-bit unsigned integer, which means it can hold numbers from 0 to 255, which is just what we need. If we wanted negative numbers too, we could've used the i8 type, and if we need more memory, we can use other variants like i16 and i32. For floats, you can use f32 or f64. By default, rust will use i32 for integers and f64 for floats.
+
+Now, let's go ahead and start implementing our struct's constructor.
+
+[Write impl and empty new -> Self]
+
+To implement a constructor, we can create an associated
+function with the name new. The truth is that Rust has no real
+constructors, and it's not necessary for the function to named
+`new`, but it's a convention in Rust to do so.
+
+The function will return the type Self, which inside the impl block refers to the
+Hangman struct.
+
+Let's add a minimal implementation of our constructor.
+
+[Add minimal Hangman return with string slice]
+
+The editor marks an error. It says it expected a String, but found an ampersand
+str instead. This is because Rust has two main String types. The ampersand str one is referred to as a "string slice", and cannot be mutated or owned by their variables, which is why they're referenced as a pointer. The String type, on the other hand, is mutable, can grow in size, is UTF-8 encoded, and can be owned by variables.
+
+By default, simple string like the one we have here are string slices. To make
+them owned Strings, we can use the `to_owned` method.
+
+[Add to_owned to string]
+
+Perfect. Let's now modify our letter_to_guess so it is generated from the letters
+of our word.
+
+> Add word variable and change it in struct.
+> Create letters_to_guess empty set.
+> Create `for ch in word.chars()` and insert in hashet.
+> Notice error, and add mut to letters_to_guess.
+
+<Explain why mut is needed>
 
 ## 27. Finished project
 
