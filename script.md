@@ -146,8 +146,11 @@ de Rust giran alrededor de este objetivo principal.
 
 ## 13. The borrow checker
 
-que aseguran la validez de la memoria en uso. El borrow-checker funciona
-en tiempo de compilación, por lo que no es necesario un garbage collector.
+Hablemos sobre el borrow-checker. Este es el principal diferenciador de Rust
+frente a otros lenguajes. El borrow-checker es un sistema compuesto por
+simples reglas que aseguran la validez de la memoria en uso. Este funciona
+en tiempo de compilación, por lo que no hace lento el programa y remueve la
+necesidad de un garbage collector.
 
 Lo que necesitamos saber sobre esto es:
 1. Cada dato tiene un dueño, que es usualmente la variable a la que se asignó.
@@ -156,7 +159,11 @@ Lo que necesitamos saber sobre esto es:
 3. Solo puede haber uno de dos casos: Que se tenga un número indefinido de
    referencias inmutables, o que se tenga una sola referencia mutable.
 
+## 14. Memory safety
+
 Con estas simples reglas, el borrow-checker permite a Rust encontrar problemas
+comunes como segfaults y pointers inválidos o null.
+
 También digámosle adiós a otros problemas comunes como variables indefinidas
 o excepciones no atrapadas. Más adelante veremos sobre cómo Rust resuelve estos
 otros problemas.
@@ -498,7 +505,7 @@ Corremos nuestros tests de nuevo.
 > cargo test
 
 Nuestro test pasó. Ahora, creemos el siguiente test, que verificará que el
-estado sea Lose si se ha adivinado correctamente perdiendo todas las vidas.
+estado sea Lose si se ha adivinado incorrectamente perdiendo todas las vidas.
 
 > Implementar test_lose_state.
 
@@ -680,7 +687,7 @@ juego.
 Ahora, entraremos en un loop infinito, en el cual imprimiremos el dibujo del
 ahorcado y pediremos el input del usuario.
 
-> Escribir loop { clear(); println!(pic) }
+> Escribir loop { clear(); println!(guessed_word) ; println!(pic) }
 
 Aquí, llamamos a la función clear(), que viene del crate que añadimos como
 dependencia, y llamamos a unwrap() ya que queremos que el programa entre en
