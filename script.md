@@ -437,6 +437,15 @@ them owned Strings, we can use the `to_owned` method.
 
 [Add to_owned to string]
 
+Ahora, sería conveniente que la palabra por adivinar no sea constante. Por esto,
+recibiremos un argumento word en la función asociada new.
+
+> Add word &str param.
+
+Es un patrón común en Rust que las funciones reciban como parámetro un string
+slice en vez de un String, ya que por lo general es más eficiente e intuitivo
+al llamar la función.
+
 Perfect. Let's now modify our letter_to_guess so it is generated from the letters
 of our word.
 
@@ -444,8 +453,340 @@ of our word.
 > Create letters_to_guess empty set.
 > Create `for ch in word.chars()` and insert in hashet.
 > Notice error, and add mut to letters_to_guess.
+> Change letters_to_guess field in final return.
 
-<Explain why mut is needed>
+Aquí, hemos añadido el keyword mut al HashSet letters_to_guess. Esto es porque
+en Rust, toda mutación debe ser explícita. En el loop de abajo insertamos
+caracteres al HashSet; esto es considereado una mutación, por lo que debemos
+declarar la variable letters_to_guess como mutable.
+
+Ahora, crearemos una función que permita al usuario adivinar un caracter.
+Esta función se llamará guess_letter. Pero antes, creemos un enum que nos
+permita conocer el resultado de adivinar una letra.
+
+> Crear GuessOutcome enum (Correct, Incorrect).
+
+Este enum será el tipo de retorno de nuestra función, la cual definiremos
+ahora mismo.
+
+> Definir guess_letter.
+
+Nuestra función recibe un caracter como parámetro. Implementemos esta función.
+
+> Implementar guess_letter.
+
+Esta función comprueba si letters_to_guess contiene la letra dada, y la remueve
+y devuelve Correct si la contiene. Sino, devuelve Incorrect y disminuye la
+cantidad de vidas en uno. La función std::cmp::max es utilizada para asegurarnos
+que las vidas no se asignen un número negativo, ya que este campo está definido
+como u8 y el programa podría crashear.
+
+Listo, a continuación, vamos a crear un método que nos permita saber si el juego
+está en progreso, o si ya se acabó. Para esto, primero crearemos un enum
+que represente el estado del juego.
+
+> Create GameState enum (Win, Lose, Playing).
+
+El estado Win significa que el jugador ganó, Lose significa que perdió, y
+Playing significa que aún no se acaba el juego.
+
+Ahora, definiremos nuestra función get_game_state.
+
+> Definir tipos de get_game_state.
+
+Podemos notar que el primer parámetro de la función es una referencia a self,
+lo que significa que esta función se considerará como un método. Para implementar
+esta función, utilizaremos Test Driven Development, por lo que primero escribiremos
+un caso de prueba. Para hacer esto, crearemos un módulo de tests al final del
+archivo.
+
+> Definir módulo test.
+> Añadir macro cfg(test).
+
+Como podemos ver, este módulo tiene un macro cfg(test), que es utilizado por
+Rust para saber que se trata de un módulo de pruebas. La primera prueba que
+crearemos es asegurarnos que el juego esté en progreso si recién ha comenzado.
+
+> Crear prueba test_playing_state.
+
+En esta prueba, creamos una instancia de Hangman con la palabra "hello". Nuestra
+prueba verificará que el estado de juego sea Playing usando un match statement.
+
+El match statement es la forma de hacer pattern matching en Rust, y es muy
+fácil de comprender. Si el estado de juego es Playing, entonces no se realiza
+ninguna acción, pero si el estado es cualquier otra cosa, se ejecutará un panic
+con un mensaje. Los panics en Rust son similares a las excepciones en otros
+lenguajes, ya que estas causan que el programa crashee. Sin embargo, esta no
+es la manera correcta de manejar errores en Rust. Veremos acerca de eso más
+adelante.
+
+Cuando el código ejecute en panic, el test fallará. Para correr nuestro test,
+ejecutemos `cargo test` en la terminal.
+
+> cargo test
+
+Como podemos ver, nuestro código no compila ya que la función get_game_state
+devuelve un unit type (similar a void en otros lenguages). Arreglemos esto
+implementando lo mínimo que haga que la prueba pase.
+
+> Retornar GameState::Playing.
+
+Corremos nuestros tests de nuevo.
+
+> cargo test
+
+Nuestro test pasó. Ahora, creemos el siguiente test, que verificará que el
+estado sea Lose si se ha adivinado correctamente perdiendo todas las vidas.
+
+> Implementar test_lose_state.
+
+Esta prueba utiliza el método guess_letter para adivinar incorrectamente hasta
+que se hayan acabado las vidas. El programa entrará en pánico si el estado
+del juego no es Lose. Corramos la prueba.
+
+> cargo test
+
+La prueba falla. Impelmentemos lo mínimo para que la prueba pase.
+
+> Implementar self.lives == 0 -> Lose.
+
+> cargo test
+
+Con esta implementación, nuestra prueba pasa. Finalmente, creemos la prueba
+para el estado Win.
+
+> Impelmentar test_win_state.
+
+En esta prueba, adivinamos correctamente todas las letras, por lo que el estado
+debería ser Win. Corremos la prueba.
+
+> cargo test
+
+Por supuesto, la prueba falla. Implementemos esta funcionalidad.
+
+> Implementar if letters_to_guess.is_empty -> Win;
+
+Aquí, si ya no hay más letras por adivinar y aún tiene vidas el jugador,
+retornamos Win. Corremos el test.
+
+> cargo test
+
+Perfecto, las pruebas pasan, y eso concluye la implementación de get_game_state.
+Con este ejercicio, hemos aprendido cómo escribir pruebas en Rust y hacer
+un poco de TDD. Por cuestiones de tiempo, no se escribirán pruebas para el
+resto del juego, pero si están interesados pueden revisar el repositorio en
+mi GitHub, que contiene todos los tests para la lógica del juego.
+
+Perfecto. Lo que haremos a continuación es traer algunos dibujos para imprimir
+en consola. Para esto, crearemos un nuevo módulo en la carpeta src, que se
+llamará pics.rs.
+
+> Crear pics.rs
+
+Pegaré los contenidos de este archivo para no pasar mucho tiempo.
+
+```rust
+pub const HANGMAN_PICS: &[&str] = &[
+    "
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========",
+    "
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========",
+    "
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========",
+    "
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========",
+    r"
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========",
+    r"
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========",
+    r"
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========",
+];
+```
+
+Lo que hacemos en este archivo es definir un array constante de string slices
+con los dibujos que vamos a usar. El tipo del array es una referencia ya que
+ninguna variable puede ser dueña de una constante; solo puede referenciarla.
+La constante también tiene el keyword pub, que significa que puede ser accedida
+en otros módulos.
+
+Para poder utilizar esté módulo, el sistema de módulos de Rust requiere que
+este sea declarado explícitamente en el archivo principal. Hagamos eso ahora.
+
+> Escribir mod pics en main.
+
+Así, ahora podremos usar nuestros dibujos en el struct. Declaremos un método
+get_pic para obtener el dibujo del juego dependiendo en el número de vidas.
+
+> Implementar get_pic.
+>   i = len() as u8 - self.lives - 1
+
+Aquí sucede algo interesante. Utilizamos el método get de los arrays para
+obtener el objeto en el índice i. Pero luego usamos un método unwrap. Lo que
+sucede aquí es que el método get devuelve un tipo Option, que puede ser algo
+o no puede ser nada. El método unwrap devuelve lo que esté envuelto en el 
+Option, y ejecutará un panic si no hay nada.
+
+Esta es una manera de manejar errores en Rust. Ya que el índice al que llamemos
+puede estar fuera de los límites del array, Rust nos permite manejar ese
+caso sin crashear el programa utilizando el enum Option. En nuestro caso,
+llamamos unwrap porque queremos que el programa falle, pero es mejor práctica
+utilizar un match statement para manejar estos casos sin panics.
+
+Finalmente, hagamos que nuestro constructor inicialice el número de vidas
+al número de dibujos que tenemos.
+
+> Cambiar lives = pics.len() as u8 - 1.
+
+Por último, creemos otro método que nos devuelva un string que representará
+la palabra en nuestra interfaz.
+
+> Implementar get_guessed_word.
+
+Esta función simplemente devolverá la palabra con guiones bajos en las letras
+que faltan adivinar.
+
+Listo. Con esto, la lógica del juego está completa. Llegó la hora de implementar
+la interfaz de nuestro juego. Para esto, utilizaremos una librería externa llamada
+clearscreen, que nos permite limpiar la consola en mútiples plataformas.
+
+> Añadir clearscreen = "1.0.10" a Cargo.toml.
+
+Con simplemente añadir esta línea, Cargo descargará la dependencia y la
+compilará al construir nuestro programa. Antes de continuar, moveremos la
+lógica de nuestro juego a un nuevo módulo, para limpiar un poco el archivo
+main.
+
+> Mover todo a módulo hangman.
+> Añadir pub keywords.
+> Cambiar import pics a crate::pics.
+
+Listo. Hemos movido la lógica del juego a un nuevo módulo. También añadimos los
+keyword pub a los structs e enums para hacerlos públicos y accesibles por otros
+módulos. Y también cambiamos el import de HANGMAN_PICS usando el módulo crate,
+que nos permite importar de forma relativa el archivo principal del proyecto.
+
+Perfecto. Ahora, iremos a nuestro módulo principal, e implementaremos el juego.
+
+Primero, crearemos una instancia de Hangman, que representará el estado del 
+juego.
+
+> Añadir mut hangman.
+
+Ahora, entraremos en un loop infinito, en el cual imprimiremos el dibujo del
+ahorcado y pediremos el input del usuario.
+
+> Escribir loop { clear(); println!(pic) }
+
+Aquí, llamamos a la función clear(), que viene del crate que añadimos como
+dependencia, y llamamos a unwrap() ya que queremos que el programa entre en
+pánico en caso de que la operación de limpiar la consola falle.
+
+Ahora, utilizando el módulo estándar io, recibiremos input del usuario.
+
+> io::stdin().read_line(&mut input).expect(error)
+
+Aquí, creamos una variable mutable input, y la pasamos como referencia mutable
+al método read_line. En este caso, en vez de llamar unwrap, llamamos expect,
+el cual tiene la misma funcionalidad de unwrap, con la diferencia de que
+se imprimirá un mensaje de error.
+
+Si corremos nuestro programa ahora, veremos que podemos ingresar nuestro input
+y la consola se limpiará al dar Enter. Para terminar el programa, podemos usar
+
+> cargo run
+> Podemos usar Ctrl + C para terminar la ejecución.
+
+Perfecto. Ahora, para no complicar la implementación, supondremos que el primer
+caracter del input es la letra por adivinar.
+
+> Definir guess_letter input.trim().chars().nth(0);
+
+Aquí, usamos el iterador del string para obtener el primer caracter. Como podemos
+ver, el resutado es un Option, por lo que es posible que el elemento no exista.
+Usaremos un match statement para manejar este caso sin problemas.
+
+> match Some => (), None => print!("Enter char"); sleep(1 sec);
+
+Aquí, lo que hacemos es imprimir un mensaje en caso de que no haya ningún input.
+Luego, se utiliza la funcińo sleep, del módulo std::thread, para para la ejecución por un segundo antes de continuar.
+
+Aún no hemos implementado la lógica en caso de que si haya un caracter. Hagámoslo
+ahora.
+
+> match Some => hangman.guess_letter().
+
+Perfecto. Corramos nuestro programa y veamos qué sucede.
+
+> cargo run.
+> [Enter sin nada].
+> Si no ingresamos nada, nos sale el mensaje de error y espera un segundo hasta
+ejecutar lo siguiente.
+> [Letra incorrecta].
+> Y cuando escribimos una letra incorrecta, vemos que el dibujo cambia.
+
+Ahora, implementemos lógica para mostrar distintos mensajes si se gana o se
+pierde el juego.
+
+> Impelmentar if game_state => print(); break;
+
+Listo. Con esto, el juego mostrará un mensaje si es que se ganó o perdió; y,
+además, se saldrá del loop, efectivamente terminando el programa.
+
+Probemos nuestro juego:
+
+> cargo run
+> Vamos a ganar.
+> Salió del juego con un mensaje de feliciationes.
+> Vamos a perder.
+> Salió del juego con un mensaje distinto.
+
+Perfecto. Felicitaciones! Hemos creado nuestra primera aplicación en Rust!
+Si es que desean profundizar un poco más esta aplicación, pueden ir al repositorio
+de la misma y podrán ver una implementación más avanzada utilizando un crate
+de creación de aplicaciones de consola.
 
 ## 27. Finished project
 
