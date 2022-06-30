@@ -1,444 +1,407 @@
 # *Getting on the Rust Train!* script
 
-Hello, everyone! My name is Anthony Suárez. I'm a backend developer at Devsu
-and a free and open source software advocate.
+Hola a todos! Mi nombre es Anthony Suárez, soy un desarrollador de backend en
+Devsu, y un partidario del open source y el software libre.
 
-As you know, the topic of this talk is the Rust programming language, and
-before starting, I would like to tell you why I chose this topic.
+Como sabrán, el tema de esta charla será el lenguage de programación Rust.
 
-Aa a developer, I've always been quite **dissatisfied** with the state of
-programming languages, and have always tried to find that state of
-**perfection***; you know, the perfect programming language that catches all
-the errors, is idiomatic, has nice tools and all of that. During this search, I
-met Rust, while it's not perfect, I do think it is pretty close, and I have
-grown to love it so much as to say it is my favorite programming language.
+En mi opinión, Rust es uno de los lenguages de programación que mejor permiten
+al programador escribir código correcto, que sea seguro y confiable. Por esta
+razón, es que lo considero mi lenguaje de programación favorito.
 
-So, in this talk, I'm going to present to you an introduction to the Rust
-programming language, so you can start to write fast, safe and reliable
-software right away, and hopefully convince you that it's worth trying this
-language.
+Con esta charla, espero que salgan todos con interés en Rust, y también con las bases
+suficientes para que puedan comenzar a crear sus propios programas y aplicaciones
+en este maravilloso lenguaje.
 
-With that said, **welcome to *Getting on the Rust Train* **!
+Dicho esto, bienvenidos a **Getting on the Rust Train**!
 
-If you have any questions, feel free to tell me. I think there is a way for you
-to raise your hand and open your mic; or you can also type in the chat and I'll
-be happy to answer your questions at any time.
+Si tienen alguna pregunta, no duden en decírmelo. Si no me equivoco, ustedes
+pueden alzar la mano para prender su micrófono, no hay problema en
+interrumpirme. Sino, pueden preguntarme por
+el chat y responderé en cualquier momento.
 
 ## 2. What is Rust?
 
-So, what is Rust? 
+Entonces, qué es Rust?
 
-Rust is a systems-programming language created by Mozilla, the creators of the
-Mozilla Firefox browser, in 2010.
+Rust es un lenguage de programación de sistemas creado por Mozilla, los creadores
+del navegador Mozilla Firefox, en el año 2010.
 
-Rust, being a system-programming language, gives you low level control over the
-system, much like C and C++, which is why you'll often see Rust as an
-alternative to these languages.
+Rust, siendo un lenguage de sistemas, ofrece control de bajo nivel al igual que
+C y C++, razón por la cual es común encontrar a Rust como alternativa a estos
+lenguajes.
 
-But, if there are languages that are well-established in software development,
-like C and C++, **why should you care about Rust**?
+Pero, si ya tenemos lenguajes de sistemas bien establecidos como C y C++, por
+qué debería importarnos Rust?
 
 ## 3. Popularity and growth
 
-Well, let's first look at the current landscape, and find *The Rust Train*, by
-seeing some data about the **Popularity and Growth* of Rust.
+Bueno, para responder esta pregunta, miremos al paisaje actual y encontremos
+el **tren de Rust**, viendo un poco de datos y estadísticas sobre el crecimiento
+y popularidad de Rust.
 
 ## 4. Rust is the most loved language
 
-First. Many of you may know this. Rust is the most loved programming language
-of the year, and it has been since 2016.
+Primero. Muchos de ustedes deben ya saber esto. Rust es el lenguaje de
+programación más amado por la comunidad, y lo ha sido desde el 2016.
 
-This data is from the StackOverflow Developer Surveys, and it's worth noting
-that Rust wins this category by a mindblowing value of 86.73% of developers
-that want to keep using it for their job. This is almost 10% above of the
-second most loved language, which is Elixir.
+Esta información viene de las encuestas anuales de StackOverflow. Es importante
+notar que Rust gana esta categoría en 2022 con un valor del 86.73% de desarrolladores
+que desean seguir usando Rust para su trabajo. Esto es 10% más alto que el
+segundo lenguaje más amado, que es Elixir.
 
 ## 5. High paying jobs
 
-Second. Rust has stayed among the highest paying technologies, according to the
-StackOverflow Developer Surveys.
+Segundo. Rust se mantiene entre las tecnologías mejor pagadas, según las
+encuestas de StackOverflow.
 
-According to the 2021 survey, Rust jobs pay an average of $77,530 per year, and
-is among other high-paying languages like Go and Scala.
+Así, de acuerdo a la encuesta del 2021, los trabajos de Rust pagan un promedio
+de $77,530 por año, estando entre otros lenguajes con paga alta como Go y
+Scala.
 
 ## 6. Rust community is growing
 
-Third. Accroding to the State of the Developer Nation study by Slash Data, Rust
-is the language with the fastest growing community! Indeed, from 2020 to 2022,
-the number of Rust developers has nearly tripled, and is around 2.2M developers
-worldwide, which means it's now bigger than Ruby's community.
+Tercero. De acuerdo a la encuesta State of the Developer Nation por Slash Data,
+Rust is el lenguaje con la comunidad de más rápido crecimiento. Desde 2020
+hasta 2022, el número de desarrolladores se ha triplicado, teniendo alrededor
+de 2.2 millones de desarrolladores, lo que significa que ahora es más grande
+que Ruby en términos de comunidad.
 
-It's also worth noting that this study also found that Rust is commonly used in
-AR/VR and IoT projects.
+En el mismo estudio se determinó que Rust es usado comúnmente para proyectos
+de realidad virtual y aumentada y para proyecto de IoT.
 
 ## 7. Rust and WASM
 
-Fourth. Rust is the #1 language for WebAssembly development.
+Cuarto. Rust es el lenguaje #1 para WebAssembly.
 
-If you don't know, WebAssembly is a new compilation target that allows browsers
-to run compiled programs which are extremely fast and performant.
+Por si no sabe, WebAssembly es un nuevo target de compilación que permite a los
+navegadores correr programas compilados, lo que los hace extremadamente rápidos.
 
-WASM is a technology that is having a lot of impact in modern web development,
-some people even claiming that it will be the default compilation target of the
-future, because it allows for truly portable and cross-platform programs.
+WASM is una tecnología que está teniendo un gran impacto en el desarrollo web
+moderno. Hay gente que incluso afirma que llegará a ser el target de compilación
+por defecto del futuro, porque permite aplicaciones verdaderamente portátiles
+y multiplataforma.
 
-Returning to Rust, it was found in the State of WASM 2021 survey that Rust is
-the most commonly used language for WebAssembly, and not only that, but Rust is
-also the language that developers wish to use when working with WASM in other
-languages.
+Volviendo a Rust, se encontró en la encuesta State of WASM 2021, que Rust es el
+lenguaje más usando para WebAssembly, y que los desarrolladores que usan otros
+lenguajes, desean usar Rust.
 
 ## 8. Rust and blockchain
 
-Fifth. Rust is very popular for blockchain technologies. Indeed, if you are
-looking for a job with Rust, it's very probable that a lot of these jobs are
-blockchain related.
+Quinto. Rust es muy popular para tecnologías blockchain. De hecho, si es que
+buscas un trabajo en Rust, es muy probable que veas que muchas posiciones
+están relacionadas a blockchain.
 
-This popularity is in part because the Solana framework allows you to create
-smart contracts with Rust.
+Esta popularidad se debe en parte a frameworks como Solana, que te permite
+crear smart contracts con Rust.
 
 ## 9. Rust and Linux
 
-Sixth. If you are a Linux fanboy like me, you will already know this.
+Sexto. Si es que eres un fanboy de Linux como yo, ya sabrás de qué va esto.
 
-Rust is the second language of the Linux kernel.
+Rust es el segundo lenguaje del kernel de Linux.
 
-Although the patches have not been merged to the main Linux kernel yet, it was
-pointed out by Linus Torvalds that it will very likely be merged for version
-5.20. One of these changes consists on a rewrite of the GNU coreutils
-with a new package called `uutils`, a project that is advancing fast and is
-very promising in terms of performance.
+Existen patches del kernel de Linux que permiten escribir el kernel con Rust.
+Aunque estos patches aún no hayan sido agregados al código principal del
+kernel, Linus Torvalds manifestó que es muy probable que estén en la versión
+5.20 de Linux. Uno de los cambios con Rust, es la reescritura de los coreutils
+de GNU en Rust, un proyecto que se nombró uutils, y que avanza rápidamente,
+llegando a tener rendimiento incluso superior al de la implementación en C.
 
 ## 10. Companies using Rust
 
-And to finish this section, here are some companies that use Rust in production.
+Y para completar esta sección, aquí están algunas grandes compañías usando
+Rust en producción.
 
-Dropbox rewrote the core of its file-syncing engine in Rust, and in their
-blogpost they explain that Rust has been a force multiplier for their team.
+Dropbox reescribió el núcleo de su motor de sincronización de archivos en Rust.
+En su blog, manifiestan que Rust ha sido un multiplicador de fuerzas para su
+equipo.
 
-Coursera uses Rust for parts of their assignment grading system, and in their
-blogpost they assure Rust is an excellent choice for security critical functions.
+Coursera usa Rust en partes de su sistema de calificación de tareas, y afirman
+que Rust es una excelente elección para funciones de seguridad crítica.
 
-Figma used Rust to rewrite their Typescript multiplayer server, which needed
-to be fast and concurrent. In their blogpost, they say they chose Rust because
-it "combines best-in-class speed with low resource usage".
+Figma usó Rust para reescribir su servidor multiplayer antes escrito en
+Typescript. Eligieron Rust porque el sistema debe ser rápido y concurrente.
+En su post, expresan que Rust combina velocidad con bajo gasto de recursos.
 
-Among other companies using Rust in production are Cloudflare, Facebook,
-Discord, Amazon, Microsoft (which is a founding member of the Rust Foundation),
-Mozilla, Coursera, NPM and Twitter. About Twitter there's a really interesting
-talk that I will tell you about at the end of my presentation.
+Entre otras compañías, están Cloudflare, Facebook, Discord, Amazon, Microsoft
+(que es un miembro fundador de la Rust Foundation), Mozilla, NPM y Twitter.
 
-If you'd like to know more about how Rust is used in production by big companies,
-you can look at the Serokell blogpost in the footer.
+Si quieren aprender más sobre estos casos de éxito, les recomiendo leer el
+post de Serokell que está aquí en el pie de la diapositiva.
 
 ## 11. Rust introduction
 
-So, I hope the data and cases I gave you are compelling enough for you to be
-interested in this language. But it's enough about that. Let's now talk about
-Rust itself and what makes it great.
+Okay, espero que los datos y los casos de éxito les haya causado interés en 
+Rust. Pero es suficiente de eso. Hablemos ahora sobre el lenguaje en sí, y
+lo que lo hace increíble.
 
 ## 12. Goals of Rust
 
-Rust was created by Mozilla with the following goal: Being a programming
-language to create fast, safe, and concurrent programs **while** being practical.
+Rust fue creado por Mozilla con el siguiente objetivo: Ser un lenguaje
+práctico para crear programas rápidos, seguros y concurrentes.
 
-You will notice that the features of Rust and the decisions made by the Rust
-developers revolve around this main goal. Let's review Rust's features.
+En las siguientes diapositivas, nos daremos cuenta que las características
+de Rust giran alrededor de este objetivo principal.
 
 ## 13. The borrow checker
 
-First, the borrow checker. Usually, when you think of very fast languages,
-you think of C and C++, which sacrifice safety and practicality for performance
-and low-level control. On the other hand, when you think of practical, high-level
-languages, you think of slow languages like Java, Python or Javascript, which
-take away low-level control and use a garbage-collector to ensure memory
-safety.
+que aseguran la validez de la memoria en uso. El borrow-checker funciona
+en tiempo de compilación, por lo que no es necesario un garbage collector.
 
-This trade-off between practicality and performance is not a problem for Rust
-thanks to its borrow checker, which is a system composed of simple rules that
-ensure safety when working with low-level memory constructs.
-
-What you need to know:
-1. Each variable has an owner.
-2. You can reference another variable's value via a *reference*, also called a 
+Lo que necesitamos saber sobre esto es:
+1. Cada dato tiene un dueño, que es usualmente la variable a la que se asignó.
+2. Se puede referenciar el valor de una varialbe mediante una referencia o
    pointer.
-3. You may either have any number of *immutable* references, or only one
-   *mutable* reference at the same time.
+3. Solo puede haber uno de dos casos: Que se tenga un número indefinido de
+   referencias inmutables, o que se tenga una sola referencia mutable.
 
-These rules ensure that the data you are working with is always valid, even
-when working with multiple threads.
-
-## 14. Memory safety
-
-As I already told you, the borrow checker ensures memory-safety, so say goodbye
-to segfaults and dangling pointers, which are a really common source of bugs
-when working with C and C++.
-
-Also say goodbye to other common issues like `undefined` variables or uncaught
-exceptions. We will talk later about how Rust solves these issues.
+Con estas simples reglas, el borrow-checker permite a Rust encontrar problemas
+También digámosle adiós a otros problemas comunes como variables indefinidas
+o excepciones no atrapadas. Más adelante veremos sobre cómo Rust resuelve estos
+otros problemas.
 
 ## 15. *Fearless Concurrency*
 
-As I told you, one of the main goals of Rust is being concurrent. Again, thanks
-to the borrow checker, common concurrency issues like race conditions or
-deadlocks are *impossible*.
+Uno de los objetivos de Rust es ser concurrente, y de nuevo gracias al
+borrow-checker, problemas comunes como race conditions o deadlocks son
+imposibles en Rust.
 
-This means that you can write concurrent code fearlessly, because your code
-will not even compile when some of these issues arises. This is exactly the
-opposite of other programming languages, where you need to be really
-experienced and careful when working with multiple threads.
+Esto significa que podemos escribir código concurrente sin miedo, ya que
+el código ni siquiera compilará si uno de estos problemas aparece. Esto
+es lo opuesto a otros lenguajes, que usualmente requiren altos grados de
+experiencia y cautelo para escribir programas que funcionan en múltiples
+threads.
 
 ## 16. Idiomatic syntax
 
-Next. Rust has a very idiomatic and expressive syntax. that gives you low-level
-power, with high-level code. Let's review a simple *Hello World* program
-written in Rust.
+Siguiente. Rust tiene una sintaxis expresiva e idiomática, que nos provee
+control de bajo nivel con código de alto nivel. Por ejemplo, veamos un
+simple Hello World en Rust.
 
 ## 17. Hello World
 
-In this script, you see two functions, defined by the `fn` keyword. The main
-function creates a new variable using the `let` keyword, which is generated by
-passing an argument to the `greet` function which is defined below. As you can
-see, it's not necessary to define the variable type explicitly, as this is
-inferred from the function call. After this, the variable is printed out
-using the `println!` macro, which uses a format string similar to Python's
-`f` strings.
+En este script, vemos dos funciones definidas con el keyword fn. Una de las
+funciones es la función principal, la cual define una variable greeting
+y la imprime en pantalla.
 
-Looking at the `greet` function, we can see it receives a `name` argument, which
-is a reference to a string slice; and it returns a new string. You might be
-wondering why theere are two string types, one `str` and one capitalized
-`String`. The reason for this is because of partly because of how data is
-dereferenced in Rust, something we will cover a bit more deeply in the hands-on.
+Esta variable greeting no necesita un tipo explícito, ya que Rust puede inferir
+el tipo de la misma.
 
-Finally, you may have noticed that the `greet` function has no `return`
-statement. This is a really nice feature of Rust that essentially makes your
-functions return when a value has no semicolon, making your code less verbose.
+En la función greet, vemos que se recibe un parámetro name de tipo str, y se
+devuelve un String. Si se preguntan cuál es la diferencia entre un str y un
+String, es que el primero, que se lo conoce como string slice, es constante y de tamaño fijo, mientras que el segundo
+es mutable y puede cambiar de tamaño. Es usual en Rust ver que las funciones
+reciban string slices como parámetros y devuelvan Strings. Esto es porque
+cualquier string slice definido dentro de la función saldría de scope cuando
+la función devuelva, por lo que el pointer se volvería inválido.
+
+Finalmente, podemos notar que no hay ningún return en ningún lado. Esto es
+porque Rust permite devolver el valor de la línea que no tenga un punto y coma
+al final, haciendo nuestro código más legible.
 
 ## 18. Modern language features
 
-Rust has a modern syntax with features from other imperative languages and from
-functional languages as well. Some of these include:
+Rust tiene sintaxis moderna que combina lo mejor de la programación funcional
+con la programación imperativa. Algunos features incluyen:
 
 - Pattern matching.
 - Enum variants.
 - Closures.
 - Async/await.
-- Macros.
-
-Macros are an advanced feature which enables metaprogramming, allowing you
-to extend Rust beyond what the common syntax lets you.
+- Y Macros, que son un feature avanzado de Rust que permite metaprogramming, 
+  lo que hace que Rust sea extensible más allá de lo posible con la sintaxis
+  regular.
 
 ## 19. Rich type system
 
-Rust's type system is really cool, allowing things like:
+El sistema de tipos de Rust da múltiples utilidades al programador, como:
 
 - Type aliases.
-- Type inference.
-- Structs (with methods).
+- Inferencia de tipos..
+- Structs (con métodos).
 - Enum variants.
-- Traits (which are similar to Haskell typeclasses and Java interfaces).
-- Genercs (not only for types, but for traits and *lifetimes* as well).
+- Traits (similares a typeclasses de Haskell e interfaces de Java).
+- Generics (no solo par tipos, sino para traits y lifetimes también).
 
-In addition, the Rust type system allows the compiler to generate helpful
-error messages that guide you when your code doesn't compile.
+Además, el sistema de tipos de Rust permite que el compilador genere mensajes
+de error muy útiles para cuando el código no compila.
 
 ## 20. Modern tooling - Cargo
 
-Rust has many modern tools at its disposal. For example, we got Cargo, which is
-Rust's package manager, build tool, test runner and documentation generator.
+El ambiente de Rust provee muchas herramentas modernas. Por ejemplo, Cargo,
+que es el package manager, build tool, test runner y generador de documentación
+de Rust.
 
-Cargo is even extensible via plugins that you can install using Cargo itself.
+Cargo, además de proveer toda esta funcionalidad, es extensible mediante
+plugins, que se pueden instalar usando Cargo mismo.
 
 ## 21. Other tools
 
-Other available tools are:
-
-- Crates.io, which is Rust's package registry.
-- Rustfmt, which is Rust's official formatter, ensuring for consistent style
-  accross your codebase.
-- Rust analyzer, which provides great IDE and editor support.
-- And Rustup, which is the official installer of the Rust toolchain, allowing
-  you to install all of these tools from a single place.
+Otras herramientas son:
+- Crates.io, el registro de paquetes de Rust.
+- Rustfmt, el formatter oficial de Rust.
+- Rust analyzer, que permite soporte de IDEs y editores de texto para Rust.
+- Y Rustup, que es el instalador oficial del toolchain the Rust.
 
 ## 22. Learning material and community
 
-Finally, Rust also has a big community and material for learning.
+Finalmente, Rust también tiene gran material de aprendizaje y una gran comunidad.
 
-For example, you can learn Rust by reading the official Rust Book, or by following
-the Rust by Example website. You can also read any library's documentation
-from its automatically generated docs. Or you can ask for help from anyone in
-the big community of Rustaceans around the world.
+Para aprender, hay muchas opciones, como el libro oficial, con nombre The
+Rust Programming Language, o la documentación autogenerada de cada librería,
+o la gran comunidad de Rusteaceans que crece cada día.
 
 ## 23. Enough talk!
 
-But enough talk! The moment that we've all been waiting for has come.
+Pero ya hablé suficiente. Es hora de comenzar lo que todos hemos estado esperando.
 
 ## 24. Hands On!
 
-It's time to write our first project in Rust!
+Es hora de escribir nuestra primera aplicación con Rust.
 
 ## 25. What we're building
 
-We will be writing a simple terminal hangman game. If you want to see the
-finished project, you can go to the GitHub repo in
-github.com/NeoLight1010/hangman-rs.
+Hoy escribiremos un simple juego de ahorcado con una interfaz de consola.
+
+Si desean ver el código del producto final, con ciertas modificaciones y
+uso de conceptos más avanzados a lo que veremos hoy, pueden acceder al
+link del repositorio que se encuentra en esta diapositiva.
 
 ## 26. What we'll learn
 
-This simple projets will expose us to multiple Rust concepts, so we will learn
-things like:
+Con este proyecto nos expondremos a varios conceptos de Rust. Aprenderemos:
 
-- Setting up a project.
-- Rust's basic syntax.
-- Basic error handling.
-- Enums, patter matching, traits, closures...
-- Using external crates.
-- Rust's module system.
-- Basic unit testings.
-- And more.
+- Cómo configurar un proyecto.
+- Sintaxis básica.
+- Manejo de errores básico.
+- Enums y pattern matching.
+- Cómo usar librerías externas.
+- El sistema de módulos de Rust.
+- Pruebas unitarias básicas.
+- Y más.
 
-So, let's get started!
+Así que comencemos!
 
 ## [Project building]
 
-To get started, we need to install the Rust toolchain using Rustup, so let's
-go to Google and type Rustup...
+Para comenzar, instalemos el toolchain de Rust usando Rustup. Así que vamos
+a Google y buscamos Rustup...
 
 [go to Google and type Rustup]
 
-And there it is. There, we can follow the instructions depending on the opertating
-system that we're using. In my case, I'm using Linux so I can run that command.
-If you use Windows, you can download the installer and execute it.
+Ahí está. Para instalar Rust, seguimos las instrucciones de la página web,
+dependiendo del sistema operativo que estemos usando. En mi caso, solo debemos
+correr este comando y seguir las instrucciones.
 
-[Run the command]
+En mi caso, ya tengo Rust instalado, entonces no voy a seguir con la
+instalación.
 
-I recommend you follow the basic instructions for installing the stable release of
-Rust. In my case, I already have Rust installed, so I wil cancel the installation.
+Para comprobar que todo esté correcto, podemos correr los comandos rustup 
+--version y rustc --version.
 
 After this, we can verify the installation by running `rustup --version` and `rustc --version`.
 
 [Run commands]
 
-Okay, perfect. Let's now make a directory for our project. You
-can create the directory anywhere. In my case, I have a folder
-specific for this lab, so I'll go in there and create the
-directory.
+Okay, todo bien. ahora crearé un directorio para comenzar con el proyecto.
 
 [Create directory]
 
-Inside this directory, we can create a new Rust file named `main.rs` in order
-to create a simple Hello World.
-
-> `touch main.rs`
-> `nvim main.rs`
-
-In my case, I will be using the NeoVim text editor, but you can use any editor
-of your preference. Let's create a Hello World program like we saw before.
-
-[Write hello world]
-
-Perfect! Let's now compile our program using the Rust compiler.
-
-> `rustc main.rs`
-> k
-
-If we list the contents of the directory, we can see an executable has been
-generated. Let's run this executable.
-
-> `./main`
-
-As you can see, it prints Hello World to the console as expected. But let's stop here. Remember I told you Rust has modern tooling? This way of manually compiling everything will get really hard to manage when our project grows bigger, so let's use Cargo instead. First, let's delete everything in the directory.
-
-> `rm main main.rs`
-
-Now, we can run the `cargo init` command.
+Dentro de este directorio, podemos correr el comando `cargo init`, lo que
+inicializará un proyecto básico con Cargo.
 
 > `cargo init`
 > `k`
 
-If we list the contents of the directory, we can see this command generated a `Cargo.toml` file and a `src` folder. Let's see what's inside `Cargo.toml`.
+Si vemos lo que está en la carpeta, veremos que se generó un archivo Cargo.toml
+y una carpeta src. Veamos dentro de Cargo.toml.
 
 [See Cargo.toml]
 
-As you can see, it contains general information about our package, and also has
-a `dependencies` section for listing external crates we might want to use. This
-is really similar to a `package.json` file if you use Node.
+Dentro de este archivo se encuentra información general sobre el paquete,
+incluyendo una sección de dependencias, que sirve para descargas paquetes
+externos de Crates.io. Esto es bastante similar a package.json cuando se usa
+Node.
 
-Let's now see what's inside src.
+Ahora, veamos dentro de src.
 
 [See src]
 
-As you can see, it contains a single `main.rs` file. Let's look at this file.
+Hay un archivo main.rs. Veamos dentro.
 
 [See main.rs]
 
-Inside the file, we can see it contains a simple Hello World program, similar
-to what we did before.
-
-Now, let's run our program using Cargo, using the `cargo run` command.
+En este archivo se encuentra un simple Hello World, como el que vimos
+anteriormente. para probar que todo funcione correctamente, podemos correr
+el comando `cargo run`.
 
 > `cargo run`
 
-The output tells us what happened here. First, the program was
-compiled, and then it was run, all in a single step. If
-instead we wished to just compile without running, we could've
-used the `cargo build` command instead. Or, if we wanted to
-just check the validity without generating any executables, we
-could've run the `cargo check` command.
+El output nos dice qué sucedió. Primero, el programa se compiló, y luego se
+ejecutó el archivo binario generado. En caso de que queramos compilar sin
+ejecutar, podemos usar `cargo build`, o también podemos usar `cargo check`
+para comprobar la validez del programa sin generar ningún ejecutable.
 
-Okay, so let's start writing our game. We will start from the basics, by creating
-the logic of our game first, and then translating that to the screen.
+Okay, comencemos a escribir el juego. Comenzaremos desde lo básico, creando
+la lógica y luego trasladando eso a una interfaz de consola.
 
-First, we need a single entity that will hold the state of our game. For this,
-we can use a struct. Let's create a Hangman struct.
+Primero, necesitamos una entidad que contenga el estado del juego. Para esto,
+podemos usar un struct, al que llamaremos Hangman.
 
 [Create empty Hangman struct]
 
-This struct will hold data about our game. A good place to start is the word that
-the player has to guess, so let's add that to the struct.
+Este struct mantendrá la información del juego. Por ejemplo, la palabra que
+se debe adivinar.
 
 [Add `word` String field]
 
-Now, we also need a way to know what letters the player needs to guess. For this,
-we can use a HashSet from Rust's standard library. Later, we will create a
-constructor that will initialize this set with the letters from the word.
+También necesitamos una forma de saber qué letras quedan por adivinar. Para
+esto, podemos usar el struct HashSet de la librería estándar. También necesitamos
+que este HashSet se popule con los caracteres de la palabra escogida, pero
+eso haremos luego.
 
 [Add `letters_to_guess` HashSet]
 
-As you can see, using Rust Analyzer's autoimporting tool, I have imported the HashSet struct from
-std::collections. This syntax brings HashSet to the module's namespace. If we hadn't done so, we would've needed to use the full name std::collections::Hashset for our field.
+Como pudimos ver, gracias a Rust Analyzer pude autoimportar el HashSet, el 
+cual viene del crate std::collections. Si no estuviera esa importación,
+tendría que llamar al HashSet con el nombre completo, o sea std::collections::HashSet.
 
-Perfect. The last thing we'll need is a way to know how many lives the player has, so let's create that.
+Perfecto. Por último, añadiremos un campo con el número de vidas del jugador.
 
 [Add `lives` u8 field]
 
-The type that we used here is u8, which means an 8-bit unsigned integer, which means it can hold numbers from 0 to 255, which is just what we need. If we wanted negative numbers too, we could've used the i8 type, and if we need more memory, we can use other variants like i16 and i32. For floats, you can use f32 or f64. By default, rust will use i32 for integers and f64 for floats.
+Aquí, el tipo que hemos usado es u8, que significa un entero sin signo, o
+unsigned integer, de 8 bits. Este tipo de dato puede contener números del 0 al
+255. Si quisiéramos números negativos también, podemos usar variantes como i16
+o i32. Para números decimales, usamos los tipos f32 o f64. Por defecto, Rust
+usa i32 para enteros y f64 para floats.
 
-Now, let's go ahead and start implementing our struct's constructor.
+Ahora que tenemos los datos del struct, implementemos el constructor.
 
 [Write impl and empty new -> Self]
 
-To implement a constructor, we can create an associated
-function with the name new. The truth is that Rust has no real
-constructors, and it's not necessary for the function to named
-`new`, but it's a convention in Rust to do so.
+Para implementar un constructor, creamos una función asociada con el nombre
+new. Esto no es requerido, ya que Rust no tiene de verdad constructores,
+pero es común llamar new a las funciones asociadas que devuelven el tipo
+de la implementación.
 
-The function will return the type Self, which inside the impl block refers to the
-Hangman struct.
+Esta función devuelve el tipo Self, que en este caso, se refiere al struct
+Hangman.
 
-Let's add a minimal implementation of our constructor.
+Creemos una mínima implementación de esta función.
 
 [Add minimal Hangman return with string slice]
 
-The editor marks an error. It says it expected a String, but found an ampersand
-str instead. This is because Rust has two main String types. The ampersand str one is referred to as a "string slice", and cannot be mutated or owned by their variables, which is why they're referenced as a pointer. The String type, on the other hand, is mutable, can grow in size, is UTF-8 encoded, and can be owned by variables.
-
-By default, simple string like the one we have here are string slices. To make
-them owned Strings, we can use the `to_owned` method.
+Aquí el editor nos marca un error. Nos dice que se esperaba un String, pero
+se encontró un string slice. En este caso, el error es porque los string literals
+en Rust son por defecto string slices, así que para convertirlos en Strings
+podemos usar el método to_owned().
 
 [Add to_owned to string]
 
 Ahora, sería conveniente que la palabra por adivinar no sea constante. Por esto,
-recibiremos un argumento word en la función asociada new.
+recibiremos un argumento word.
 
 > Add word &str param.
 
@@ -446,14 +409,13 @@ Es un patrón común en Rust que las funciones reciban como parámetro un string
 slice en vez de un String, ya que por lo general es más eficiente e intuitivo
 al llamar la función.
 
-Perfect. Let's now modify our letter_to_guess so it is generated from the letters
-of our word.
+Perfecto. Ahora modifiquemos nuestro letters_to_guess, para que sea generado
+de la palabra que pasamos como argumento.
 
-> Add word variable and change it in struct.
 > Create letters_to_guess empty set.
 > Create `for ch in word.chars()` and insert in hashet.
 > Notice error, and add mut to letters_to_guess.
-> Change letters_to_guess field in final return.
+> **Change letters_to_guess field in final return**
 
 Aquí, hemos añadido el keyword mut al HashSet letters_to_guess. Esto es porque
 en Rust, toda mutación debe ser explícita. En el loop de abajo insertamos
@@ -785,55 +747,60 @@ Probemos nuestro juego:
 
 Perfecto. Felicitaciones! Hemos creado nuestra primera aplicación en Rust!
 Si es que desean profundizar un poco más esta aplicación, pueden ir al repositorio
-de la misma y podrán ver una implementación más avanzada utilizando un crate
-de creación de aplicaciones de consola.
+de la misma y podrán ver una implementación más avanzada utilizando el crate
+Cursive para creación de aplicaciones de consola.
 
 ## 27. Finished project
 
-So, we've finished our project. Now what?
+Perfecto. Hemos terminado nuestro proyecto. Y ahora qué?
 
-Well, if you're interested in learning more about Rust, I can recommend some
-material that you can use.
+Bueno, si les interesó el desarrollo con Rust, puedo recomendar material de
+aprendizaje que considero muy bueno.
 
 ## 28. Some great material
 
-First, The Rust Programming Language book is a great place to start to learn
-Rust, from its basic usage, to the more advanced topics.
+Primero, el libro oficial de Rust es un grandioso lugar para comenzar a
+aprender desde conceptos básicos hasta los más complejos.
 
-Second, I recommend the *Let's Get Rusty* Youtube channel, which is a channel
-all dedicated to Rust where you will find guides for diverse topics about the
-language.
+Segundo, recomiendo el canal de Youtube Let's Get Rusty, que es totalmente
+dedicado a Rust, y contiene guías y tutoriales de temas diversos.
 
-I also recommend the talk *Type-Driven API Design in Rust*; an amazing talk
-that showcases how Rust's trait system can be a powerful tool for designing
-good APIs in Rust.
+También recomiendo la charla *Type-Driven API Design in Rust*, que demuestra
+cómo el sistema de traits de Rust es un gran aliado para diseñar buenos APIs
+en Rust.
 
-Another talk that I highly recommend is *Whoops! I Rewrote it in Rust* by
-Brian Martin, in which Martin showcases how Rust was used at Twitter for
-rewriting an open source memory-caching tool, achieving even better results
-than with the pure C implementation.
+Finalmente, otra charla que recomiendo es *Whoops! I Rewrote it in Rust*, en
+la que Brian Martin muestra cómo se usó Rust para reescribir la herramienta
+de caching en memoria utilizado en Twitter, llegando a tener incluso mejor
+rendimiento que la implementación en C puro.
 
 ## 29. Challenges
 
-Finally, if you like learning by doing, I can recommend some challenges
-that will help you get hands-on experience working with Rust.
+Para ganar experiencia, también recomiendo crear tus propias aplicaciones,
+así que les voy a decir algunas ideas de qué hacer.
 
-You can create a simple Snake game using the Piston game engine; or, you can
-build a REST API using the Rocket web framework and the Diesel ORM; or, if you
-are a React developer, you might be interested in creating a WebAssembly web
-app using Yew; or you can create a cool CLI application using a crate like
-Cursive or tui-rs.
+Si les gusta los videojuegos, pueden crear un simple juego de Snake usando
+el crate Piston.
 
-The possibilities with Rust are endless! Because, although Rust's initial scope was
-systems programming, its amazing features has allowed it to be an excellent
-language for many other areas.
+Si les gusta el desarrollo web, pueden crear un REST API usando Rocket como
+web framework y Diesel como ORM.
 
-With that, I have nothing else to say but...
+Si les gusta el frontend, y especialmente si les gusta React, les va a interesar
+crear una aplciación de WebAssembly usando el crate Yew.
+
+O, si les interesa, pueden crear una aplicación con interfaz de consola usando
+librerías como Cursive o tui-rs.
+
+La verdad es que Rust, a pesar de ser un lenguaje de sistemas, tiene una comunidad
+muy grande y es ampliamente usado para otras áreas también, por lo que ahora
+las posibilidades son infinitas.
+
+Así, no me queda nada más que decir, excepto...
 
 ## 30. Thank you
 
-... thank you for attending this talk. I hope you have learned something new
-and I hope you now feel ready to jump into Rust and start creating
-amazing, fast, safe and reliable software. Thank you!
+...gracias por asistir a esta charla. Espero que hayan aprendido algo nuevo,
+y espero que ahora se sientan interesados y listos para comenzar con Rust
+y crear software rápido, seguro y confiable. Muchas gracias!
 
-So, if there are any questions, I'll be happy to answer them.
+Si hay preguntas, estaré feliz de responderlas, sino, eso es todo de mi parte.
